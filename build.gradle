@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.1.7'
+    id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -26,9 +26,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // mysql
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    // mapstruct
+    implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+    // common-lang3
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
 }
 
 tasks.named('bootBuildImage') {
